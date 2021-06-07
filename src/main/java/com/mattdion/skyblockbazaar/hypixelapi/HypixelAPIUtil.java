@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutionException;
 @Repository
 public class HypixelAPIUtil {
     public static final HypixelAPI hypixelAPI = new HypixelAPI(UUID.fromString(System.getenv("HYPIXEL_API_KEY")));
-    private static final long UPDATE_INTERVAL_MINUTES = 1;
+    public static final long UPDATE_INTERVAL_MINUTES = 1;
     private BazaarReply bazaarReply;
     private Instant lastUpdated;
 

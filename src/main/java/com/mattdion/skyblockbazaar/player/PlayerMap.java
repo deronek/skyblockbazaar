@@ -20,13 +20,31 @@ public class PlayerMap {
         this.playerMap = new HashMap<>();
     }
 
-    public void addPlayer(String name) {
+    /**
+     * @param name player name
+     * @throws NoPlayerFoundException when no player is found in Mojang API database
+     */
+    public void addPlayer(String name) throws NoPlayerFoundException {
         Player player = mojangAPIClient
                 .get()
                 .uri(name)
                 .retrieve()
                 .bodyToMono(Player.class)
                 .block(REQUEST_TIMEOUT);
+
+        if (player == null) throw new NoPlayerFoundException("Player not found");
         playerMap.put(player.getName(), player);
+    }
+
+    public Map<String, Player> getPlayers() {
+        return new HashMap<>(playerMap);
+    }
+
+    public Player getPlayer(String name) {
+        return playerMap.get(name);
+    }
+
+    public Player removePlayer(String name) {
+        return playerMap.remove(name);
     }
 }
