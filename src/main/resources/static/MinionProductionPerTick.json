@@ -1,0 +1,23 @@
+{
+  "CARROT": 3,
+  "POTATO": 3,
+  "MELON": 6,
+  "COCOA": 3,
+  "SUGAR_CANE": 2,
+
+  "SLIME": 1.8,
+  "MAGMA_CUBE": 1.8,
+
+  "REDSTONE": 4.5,
+  "LAPIS": 6,
+  "GLOWSTONE": 3,
+  "CLAY": 4,
+  "SNOW": 4,
+
+  "OAK": 3.5,
+  "SPRUCE": 3.5,
+  "BIRCH": 3.5,
+  "DARK_OAK": 3.5,
+  "ACACIA": 3.5,
+  "JUNGLE": 3.5
+}

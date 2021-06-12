@@ -1,5 +1,7 @@
 package com.mattdion.skyblockbazaar.player;
 
+import com.mattdion.skyblockbazaar.apiutils.MojangAPIUtil;
+import com.mattdion.skyblockbazaar.exceptions.NoPlayerFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -7,33 +9,29 @@ import org.springframework.web.reactive.function.client.WebClient;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeoutException;
 
 @Repository
 public class PlayerMap {
-    private static final Duration REQUEST_TIMEOUT = Duration.ofSeconds(5);
-    private final WebClient mojangAPIClient;
+    private final MojangAPIUtil mojangAPIUtil;
     private final Map<String, Player> playerMap;
 
     @Autowired
-    public PlayerMap(WebClient.Builder builder) {
-        this.mojangAPIClient = builder.baseUrl("https://api.mojang.com/users/profiles/minecraft/").build();
+    public PlayerMap(MojangAPIUtil mojangAPIUtil) {
+        this.mojangAPIUtil = mojangAPIUtil;
         this.playerMap = new HashMap<>();
     }
 
     /**
-     * @param name player name
+     * @param name Player name
+     * @return added Player
      * @throws NoPlayerFoundException when no player is found in Mojang API database
+     * @throws TimeoutException when request to Mojang API times out
      */
-    public void addPlayer(String name) throws NoPlayerFoundException {
-        Player player = mojangAPIClient
-                .get()
-                .uri(name)
-                .retrieve()
-                .bodyToMono(Player.class)
-                .block(REQUEST_TIMEOUT);
-
-        if (player == null) throw new NoPlayerFoundException("Player not found");
+    public Player addPlayer(String name) throws NoPlayerFoundException, TimeoutException {
+        Player player = mojangAPIUtil.getPlayer(name);
         playerMap.put(player.getName(), player);
+        return player;
     }
 
     public Map<String, Player> getPlayers() {

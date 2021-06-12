@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyBazaarReply {
-    private Map<String, MyProduct> products = new HashMap<>();
+    private final Map<String, MyProduct> products = new HashMap<>();
 
     // create map equivalent, but with MyProduct instead of Product
     public MyBazaarReply(BazaarReply bazaarReply) {

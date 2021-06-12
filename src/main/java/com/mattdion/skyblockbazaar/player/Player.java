@@ -1,14 +1,20 @@
 package com.mattdion.skyblockbazaar.player;
 
+import com.mattdion.skyblockbazaar.minions.MinionID;
+import com.mattdion.skyblockbazaar.minions.MinionMap;
+
 import java.time.Instant;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 
 public class Player {
-    public static final long UPDATE_INTERVAL_MINUTES = 60;
+    public static final long UUID_UPDATE_INTERVAL_MINUTES = 60;
     private final String name;
+
     private final UUID id;
     private final Instant lastUpdated;
+    private MinionMap minionMap;
 
     public Player(String name, String id) {
         this.name = name;
@@ -32,6 +38,15 @@ public class Player {
 
     public Instant getLastUpdated() {
         return lastUpdated;
+    }
+
+    public MinionMap getMinionMap() {
+        return minionMap;
+    }
+
+    public void updateMinionMap(HashMap<MinionID, Integer> minionLevels) {
+        if(minionMap == null) minionMap = new MinionMap();
+        minionMap.requestUpdateMinionMap(minionLevels);
     }
 
     @Override

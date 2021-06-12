@@ -1,11 +1,12 @@
 package com.mattdion.skyblockbazaar.player;
 
+import com.mattdion.skyblockbazaar.exceptions.NoPlayerFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.Map;
+import java.util.concurrent.TimeoutException;
 
 @Service
 public class PlayerMapService {
@@ -16,16 +17,15 @@ public class PlayerMapService {
         this.playerMap = playerMap;
     }
 
-    public Map<String, Player> addPlayer(String name) throws NoPlayerFoundException {
+    public Player addPlayer(String name) throws NoPlayerFoundException, TimeoutException {
         Player player = playerMap.getPlayer(name);
-        if (player != null) {
-            if (Duration.between(player.getLastUpdated(), Instant.now())
-                    .compareTo(Duration.ofMinutes(Player.UPDATE_INTERVAL_MINUTES)) <= 0) {
-                return playerMap.getPlayers();
-            }
-            playerMap.removePlayer(name);
+        if (player == null) return playerMap.addPlayer(name);
+
+        if (Duration.between(player.getLastUpdated(), Instant.now())
+                .compareTo(Duration.ofMinutes(Player.UUID_UPDATE_INTERVAL_MINUTES)) <= 0) {
+            return playerMap.getPlayer(name);
         }
-        playerMap.addPlayer(name);
-        return playerMap.getPlayers();
+        playerMap.removePlayer(name);
+        return playerMap.addPlayer(name);
     }
 }
