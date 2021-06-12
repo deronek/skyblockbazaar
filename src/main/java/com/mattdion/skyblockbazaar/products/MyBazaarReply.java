@@ -10,7 +10,7 @@ public class MyBazaarReply {
 
     // create map equivalent, but with MyProduct instead of Product
     public MyBazaarReply(BazaarReply bazaarReply) {
-        for(BazaarReply.Product product : bazaarReply.getProducts().values()) {
+        for (BazaarReply.Product product : bazaarReply.getProducts().values()) {
             MyProduct myProduct = new MyProduct(product);
             products.put(myProduct.product.getProductId(), myProduct);
         }

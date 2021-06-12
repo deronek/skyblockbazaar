@@ -5,6 +5,7 @@ import com.mattdion.skyblockbazaar.minions.MinionMap;
 
 import java.time.Instant;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -44,8 +45,8 @@ public class Player {
         return minionMap;
     }
 
-    public void updateMinionMap(HashMap<MinionID, Integer> minionLevels) {
-        if(minionMap == null) minionMap = new MinionMap();
+    public void updateMinionMap(Map<MinionID, Integer> minionLevels) {
+        if (minionMap == null) minionMap = new MinionMap();
         minionMap.requestUpdateMinionMap(minionLevels);
     }
 

@@ -24,6 +24,7 @@ public class HypixelAPIUtil {
         updateProducts();
     }
 
+    // TODO: more elegant exception handling, no printStackTrace bullshit
     private void updateProducts() throws TimeoutException {
         try {
             bazaarReply = hypixelAPI.getBazaar().get(UPDATE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
@@ -63,4 +64,6 @@ public class HypixelAPIUtil {
         }
         return null;
     }
+
+
 }

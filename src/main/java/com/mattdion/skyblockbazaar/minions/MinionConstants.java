@@ -8,7 +8,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -27,12 +26,14 @@ public class MinionConstants {
         try {
             minionProductionPerTick = loadResourceToMap(
                     "static/MinionProductionPerTick.json",
-                    new TypeToken<HashMap<String, Double>>(){}.getType());
+                    new TypeToken<HashMap<String, Double>>() {
+                    }.getType());
             log.info("Initialized minionProductionPerTick Map");
 
             minionBaseTickTime = loadResourceToMap(
                     "static/MinionBaseTickTime.json",
-                    new TypeToken<HashMap<String, List<Double>>>(){}.getType());
+                    new TypeToken<HashMap<String, List<Double>>>() {
+                    }.getType());
             log.info("Initialized minionBaseTickTime Map");
         } catch (IOException e) {
             throw new ExceptionInInitializerError(e);

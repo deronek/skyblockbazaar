@@ -12,38 +12,37 @@ public class MinionMap {
 
     /**
      * Value in minutes representing how much time to wait between
-     * MinionMap updates.
+     * {@link MinionMap} updates.
      */
     public static final long MINIONS_UPDATE_INTERVAL_MINUTES = 2;
-    private final Map<MinionID, Minion> minionMap;
+    private final Map<MinionID, Minion> minions;
     private Instant lastUpdated;
 
     /**
-     * Constructs the MinionMap and fills it with level 0 Minions.
+     * Constructs the {@link MinionMap} and fills it with level 0 {@link Minion} instances.
      */
     public MinionMap() {
-        this.minionMap = new HashMap<>();
+        this.minions = new HashMap<>();
 
         for (MinionID id : MinionID.values()) {
-            minionMap.put(id, new Minion(id, 0));
+            minions.put(id, new Minion(id, 0));
         }
     }
 
     private void updateMinionMap(Map<MinionID, Integer> minionLevels) {
         for (Map.Entry<MinionID, Integer> entry : minionLevels.entrySet()) {
-            Minion minion = minionMap.get(entry.getKey());
+            Minion minion = minions.get(entry.getKey());
             minion.setLevel(entry.getValue());
         }
         lastUpdated = Instant.now();
     }
 
     /**
-     * Request the update of the MinionMap. The map gets updated
+     * Request the update of the {@link MinionMap}. The map gets updated
      * if the map hasn't been updated yet or it's outdated by interval
-     * set by MINIONS_UPDATE_INTERVAL_MINUTES constant.
+     * set by {@link #MINIONS_UPDATE_INTERVAL_MINUTES} constant.
      *
-     * @param minionLevels Map of Minion levels
-     * @see MinionMap#MINIONS_UPDATE_INTERVAL_MINUTES
+     * @param minionLevels {@link Map} of {@link Minion} levels
      */
     public void requestUpdateMinionMap(Map<MinionID, Integer> minionLevels) {
         if (lastUpdated == null ||
@@ -54,9 +53,9 @@ public class MinionMap {
     }
 
     /**
-     * Force the update of the MinionMap.
+     * Force the update of the {@link MinionMap}.
      *
-     * @param minionLevels Map of Minion levels
+     * @param minionLevels {@link Map} of {@link Minion} levels
      */
     public void forceUpdateMinionMap(Map<MinionID, Integer> minionLevels) {
         updateMinionMap(minionLevels);
@@ -64,15 +63,15 @@ public class MinionMap {
 
 
     /**
-     * @return copy of minionMap Map
+     * {@return {@link Map} of {@link Minion} instances}
      */
-    public Map<MinionID, Minion> getMinionMap() {
-        return new HashMap<>(minionMap);
+    public Map<MinionID, Minion> getMinions() {
+        return new HashMap<>(minions);
     }
 
 
     /**
-     * @return time of last MinionMap update
+     * {@return {@link Instant} of last {@link MinionMap} update}
      */
     public Instant getLastUpdated() {
         return lastUpdated;
@@ -81,7 +80,8 @@ public class MinionMap {
     @Override
     public String toString() {
         return "MinionMap{" +
-                "minionMap=" + minionMap +
+                "minions=" + minions +
+                ", lastUpdated=" + lastUpdated +
                 '}';
     }
 }

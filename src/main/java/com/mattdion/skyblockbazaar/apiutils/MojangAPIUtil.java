@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.concurrent.TimeoutException;
 
 @Repository

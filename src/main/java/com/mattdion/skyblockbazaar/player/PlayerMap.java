@@ -4,9 +4,7 @@ import com.mattdion.skyblockbazaar.apiutils.MojangAPIUtil;
 import com.mattdion.skyblockbazaar.exceptions.NoPlayerFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.reactive.function.client.WebClient;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
@@ -23,10 +21,10 @@ public class PlayerMap {
     }
 
     /**
-     * @param name Player name
-     * @return added Player
+     * @param name {@link Player} name
+     * @return {@link Player} added to {@link PlayerMap}
      * @throws NoPlayerFoundException when no player is found in Mojang API database
-     * @throws TimeoutException when request to Mojang API times out
+     * @throws TimeoutException       when request to Mojang API times out
      */
     public Player addPlayer(String name) throws NoPlayerFoundException, TimeoutException {
         Player player = mojangAPIUtil.getPlayer(name);

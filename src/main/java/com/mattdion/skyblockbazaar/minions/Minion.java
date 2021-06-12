@@ -2,6 +2,8 @@ package com.mattdion.skyblockbazaar.minions;
 
 import com.mattdion.skyblockbazaar.exceptions.IllegalMinionState;
 
+import java.util.Objects;
+
 public class Minion {
     private static final int MINION_MAX_LEVEL = 11;
     private final MinionID id;
@@ -23,13 +25,9 @@ public class Minion {
 
         // if it's not in the JSON file, we assume minionProductionPerTick equals 1
         Double minionProductionPerTick = MinionConstants.minionProductionPerTick.get(id.name());
-        if (minionProductionPerTick == null) {
-            this.minionProductionPerTick = 1;
-        } else {
-            this.minionProductionPerTick = minionProductionPerTick;
-        }
+        this.minionProductionPerTick = Objects.requireNonNullElse(minionProductionPerTick, 1.0);
 
-        if(level != 0) {
+        if (level != 0) {
             updateMinionBaseTickTime();
             updateTotalProductionPerHour();
         }
@@ -55,7 +53,7 @@ public class Minion {
     public void setLevel(int level) {
         this.level = level;
 
-        if(level != 0) {
+        if (level != 0) {
             updateMinionBaseTickTime();
             updateTotalProductionPerHour();
         }
@@ -68,7 +66,7 @@ public class Minion {
     public void setFuelBonus(double fuelBonus) {
         this.fuelBonus = fuelBonus;
 
-        if(level != 0) {
+        if (level != 0) {
             updateTotalProductionPerHour();
         }
     }
@@ -87,7 +85,7 @@ public class Minion {
     }
 
     private void checkLevel() {
-        if(level == 0) throw new IllegalMinionState("Minion level is zero");
+        if (level == 0) throw new IllegalMinionState("Minion level is zero");
     }
 
     @Override
