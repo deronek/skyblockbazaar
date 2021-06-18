@@ -1,8 +1,5 @@
 package com.mattdion.skyblockbazaar.products;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public enum ProductID {
     // skipping seeds production for Wheat
     WHEAT,
@@ -181,8 +178,6 @@ public enum ProductID {
 
     JUNGLE_WOOD,
     ENCHANTED_JUNGLE_WOOD;
-
-    private static final Logger log = LoggerFactory.getLogger(ProductID.class);
 
     /**
      * Static method which returns {@link ProductID} with value of parameter {@link String}.
