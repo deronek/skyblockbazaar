@@ -11,14 +11,14 @@ import java.util.concurrent.TimeoutException;
 
 @Repository
 public class MojangAPIUtil {
-    private final WebClient mojangAPIClient;
     private static final Duration REQUEST_TIMEOUT = Duration.ofSeconds(5);
+    private static final String PLAYER_NOT_FOUND_MOJANG = "Player not found in Mojang API database";
+    private final WebClient mojangAPIClient;
 
     @Autowired
     public MojangAPIUtil(WebClient.Builder builder) {
         this.mojangAPIClient = builder
                 .baseUrl("https://api.mojang.com/users/profiles/minecraft/")
-                //.baseUrl("http://10.255.255.1")
                 .build();
     }
 
@@ -31,10 +31,10 @@ public class MojangAPIUtil {
                     .bodyToMono(Player.class)
                     .block(REQUEST_TIMEOUT);
 
-            if (player == null) throw new NoPlayerFoundException("Player not found");
+            if (player == null) throw new NoPlayerFoundException(PLAYER_NOT_FOUND_MOJANG);
             return player;
         } catch (IllegalStateException e) {
-            throw new TimeoutException();
+            throw new TimeoutException("Mojang API timeout");
         }
     }
 }

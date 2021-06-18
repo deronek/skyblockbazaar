@@ -1,0 +1,14 @@
+{
+  "LOG" : "OAK_WOOD",
+  "LOG:1" : "SPRUCE_WOOD",
+  "LOG:2" : "BIRCH_WOOD",
+  "LOG_2:1" : "DARK_OAK_WOOD",
+  "LOG_2"  : "ACACIA_WOOD",
+  "LOG:3": "JUNGLE_WOOD",
+
+  "INK_SACK:3" : "COCOA_BEANS",
+  "INK_SACK:4" : "LAPIS_LAZULI",
+
+  "RAW_FISH:1" : "RAW_SALMON",
+  "RAW_FISH:3" : "PUFFERFISH"
+}

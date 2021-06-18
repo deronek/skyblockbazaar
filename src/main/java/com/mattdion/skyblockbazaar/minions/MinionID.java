@@ -1,22 +1,24 @@
 package com.mattdion.skyblockbazaar.minions;
 
 public enum MinionID {
+    // TODO: add commented out minions; they have multiple product drops from one minion
     WHEAT,
     CARROT,
     POTATO,
     PUMPKIN,
     MELON,
-    MUSHROOM,
+    //MUSHROOM,
     COCOA,
     CACTUS,
     SUGAR_CANE,
-    COW,
+    //COW,
     PIG,
-    CHICKEN,
-    SHEEP,
-    RABBIT,
+    //CHICKEN,
+    //SHEEP,
+    //RABBIT,
     NETHER_WARTS,
-    FISHING,
+    //FISHING,
+    FLOWER,
 
     COAL,
     COBBLESTONE,
@@ -35,6 +37,7 @@ public enum MinionID {
     ENDER_STONE,
     SNOW,
     CLAY,
+    MITHRIL,
 
     ZOMBIE,
     SKELETON,
@@ -47,10 +50,22 @@ public enum MinionID {
     GHAST,
     SLIME,
 
+    REVENANT,
+    TARANTULA,
+    VOIDLING,
+
     OAK,
     SPRUCE,
     BIRCH,
     DARK_OAK,
     ACACIA,
-    JUNGLE,
+    JUNGLE;
+
+    public static MinionID getMinionId(String name) {
+        try {
+            return valueOf(name);
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+    }
 }

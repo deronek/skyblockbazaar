@@ -1,0 +1,450 @@
+{
+  "WHEAT" :
+  {
+    "WHEAT" : 1
+  },
+  "ENCHANTED_BREAD" :
+  {
+    "WHEAT" : 60
+  },
+
+  "CARROT" :
+  {
+    "CARROT" : 1
+  },
+  "ENCHANTED_CARROT" :
+  {
+    "CARROT" : 160
+  },
+
+  "POTATO" :
+  {
+    "POTATO" : 1
+  },
+  "ENCHANTED_POTATO" :
+  {
+    "POTATO" : 160
+  },
+  "ENCHANTED_BAKED_POTATO" :
+  {
+    "POTATO" : 25600
+  },
+
+  "PUMPKIN" :
+  {
+    "PUMPKIN" : 1
+  },
+  "ENCHANTED_PUMPKIN" :
+  {
+    "PUMPKIN" : 160
+  },
+
+  "MELON" :
+  {
+    "MELON" : 1
+  },
+  "ENCHANTED_MELON" :
+  {
+    "MELON" : 160
+  },
+  "ENCHANTED_GLISTERING_MELON" :
+  {
+    "MELON" : 256,
+    "GOLD" : 227.56
+  },
+  "ENCHANTED_MELON_BLOCK" :
+  {
+    "MELON" : 25600
+  },
+
+  "COCOA_BEANS" :
+  {
+    "COCOA" : 1
+  },
+  "ENCHANTED_COCOA_BEANS" :
+  {
+    "COCOA" : 160
+  },
+
+  "CACTUS" :
+  {
+    "CACTUS" : 1
+  },
+  "ENCHANTED_CACTUS_GREEN" :
+  {
+    "CACTUS" : 160
+  },
+  "ENCHANTED_CACTUS" :
+  {
+    "CACTUS" : 25600
+  },
+
+  "SUGAR_CANE":
+  {
+    "SUGAR_CANE": 1
+  },
+  "ENCHANTED_SUGAR" :
+  {
+    "SUGAR_CANE": 160
+  },
+  "ENCHANTED_PAPER" :
+  {
+    "SUGAR_CANE": 192
+  },
+  "ENCHANTED_SUGAR_CANE" :
+  {
+    "SUGAR_CANE": 25600
+  },
+
+  "NETHER_WART" :
+  {
+    "NETHER_WARTS" : 1
+  },
+  "ENCHANTED_NETHER_WART" :
+  {
+    "NETHER_WARTS" : 160
+  },
+
+  "PORK" :
+  {
+    "PIG" : 1
+  },
+  "ENCHANTED_PORK" :
+  {
+    "PIG" : 160
+  },
+  "ENCHANTED_GRILLED_PORK" :
+  {
+    "PIG" : 25600
+  },
+
+  "COAL" :
+  {
+    "COAL" : 1
+  },
+  "ENCHANTED_COAL" :
+  {
+    "COAL" : 160
+  },
+  "ENCHANTED_COAL_BLOCK" :
+  {
+    "COAL" : 25600
+  },
+
+  "COBBLESTONE" :
+  {
+    "COBBLESTONE" : 1
+  },
+  "ENCHANTED_COBBLESTONE" :
+  {
+    "COBBLESTONE" : 160
+  },
+
+  "IRON_INGOT" :
+  {
+    "IRON" : 1
+  },
+  "ENCHANTED_IRON" :
+  {
+    "IRON" : 160
+  },
+  "ENCHANTED_IRON_BLOCK" :
+  {
+    "IRON" : 25600
+  },
+
+  "GOLD_INGOT" :
+  {
+    "GOLD" : 1
+  },
+  "ENCHANTED_GOLD" :
+  {
+    "GOLD" : 160
+  },
+  "ENCHANTED_GOLD_BLOCK" :
+  {
+    "GOLD" : 25600
+  },
+
+  "DIAMOND" :
+  {
+    "DIAMOND" : 1
+  },
+  "ENCHANTED_DIAMOND" :
+  {
+    "DIAMOND" : 160
+  },
+  "ENCHANTED_DIAMOND_BLOCK" :
+  {
+    "DIAMOND" : 25600
+  },
+
+  "LAPIS_LAZULI" :
+  {
+    "LAPIS" : 1
+  },
+  "ENCHANTED_LAPIS_LAZULI" :
+  {
+    "LAPIS" : 160
+  },
+  "ENCHANTED_LAPIS_LAZULI_BLOCK" :
+  {
+    "LAPIS" : 25600
+  },
+
+  "EMERALD" :
+  {
+    "EMERALD" : 1
+  },
+  "ENCHANTED_EMERALD" :
+  {
+    "EMERALD" : 160
+  },
+  "ENCHANTED_EMERALD_BLOCK" :
+  {
+    "EMERALD" : 25600
+  },
+
+  "REDSTONE" :
+  {
+    "REDSTONE" : 1
+  },
+  "ENCHANTED_REDSTONE" :
+  {
+    "REDSTONE" : 160
+  },
+  "ENCHANTED_REDSTONE_BLOCK" :
+  {
+    "REDSTONE" : 25600
+  },
+
+  "QUARTZ" :
+  {
+    "QUARTZ" : 1
+  },
+  "ENCHANTED_QUARTZ" :
+  {
+    "QUARTZ" : 160
+  },
+  "ENCHANTED_QUARTZ_BLOCK" :
+  {
+    "QUARTZ" : 25600
+  },
+
+  "OBSIDIAN" :
+  {
+    "OBSIDIAN" : 1
+  },
+  "ENCHANTED_OBSIDIAN" :
+  {
+    "OBSIDIAN" : 160
+  },
+
+  "GLOWSTONE_DUST" :
+  {
+    "GLOWSTONE" : 1
+  },
+  "ENCHANTED_GLOWSTONE_DUST" :
+  {
+    "GLOWSTONE" : 160
+  },
+  "ENCHANTED_GLOWSTONE" :
+  {
+    "GLOWSTONE" : 30720
+  },
+
+  "GRAVEL" :
+  {
+    "GRAVEL" : 1
+  },
+  "FLINT" :
+  {
+    "GRAVEL" : 1
+  },
+  "ENCHANTED_FLINT" :
+  {
+    "GRAVEL" : 160
+  },
+
+  "ICE" :
+  {
+    "ICE" : 1
+  },
+  "PACKED_ICE" :
+  {
+    "ICE" : 9
+  },
+  "ENCHANTED_ICE" :
+  {
+    "ICE" : 160
+  },
+  "ENCHANTED_PACKED_ICE" :
+  {
+    "ICE" : 25600
+  },
+
+  "SNOWBALL" :
+  {
+    "SNOW" : 1
+  },
+  "SNOW_BLOCK":
+  {
+    "SNOW" : 4
+  },
+  "ENCHANTED_SNOW_BLOCK" :
+  {
+    "SNOW" : 640
+  },
+
+  "ENDER_STONE" :
+  {
+    "ENDER_STONE" : 1
+  },
+  "ENCHANTED_END_STONE" :
+  {
+    "ENDER_STONE" : 160
+  },
+
+  "CLAY" :
+  {
+    "CLAY" : 1
+  },
+  "ENCHANTED_CLAY" :
+  {
+    "CLAY" : 160
+  },
+
+  "ROTTEN_FLESH" :
+  {
+    "ZOMBIE" : 1
+  },
+  "ENCHANTED_ROTTEN_FLESH" :
+  {
+    "ZOMBIE" : 160
+  },
+
+  "BONE" :
+  {
+    "SKELETON" : 1
+  },
+  "ENCHANTED_BONE" :
+  {
+    "SKELETON" : 160
+  },
+
+  "ENDER_PEARL" :
+  {
+    "ENDERMAN" : 1
+  },
+  "ENCHANTED_ENDER_PEARL" :
+  {
+    "ENDERMAN" : 20
+  },
+
+  "GUNPOWDER" :
+  {
+    "CREEPER" : 1
+  },
+  "ENCHANTED_GUNPOWDER" :
+  {
+    "CREEPER" : 160
+  },
+
+  "BLAZE_ROD" :
+  {
+    "BLAZE" : 1
+  },
+  "ENCHANTED_BLAZE_POWDER" :
+  {
+    "BLAZE" : 160
+  },
+  "ENCHANTED_BLAZE_ROD" :
+  {
+    "BLAZE" : 25600
+  },
+
+  "GHAST_TEAR" :
+  {
+    "GHAST" : 1
+  },
+  "ENCHANTED_GHAST_TEAR" :
+  {
+    "GHAST" : 5
+  },
+
+  "SLIMEBALL" :
+  {
+    "SLIME" : 1
+  },
+  "ENCHANTED_SLIMEBALL" :
+  {
+    "SLIME" : 160
+  },
+  "ENCHANTED_SLIME_BLOCK" :
+  {
+    "SLIME" : 25600
+  },
+
+  "MAGMA_CREAM" :
+  {
+    "MAGMA_CUBE" : 1
+  },
+  "ENCHANTED_MAGMA_CREAM" :
+  {
+    "MAGMA_CUBE" : 160
+  },
+
+  "OAK_WOOD" :
+  {
+    "OAK" : 1
+  },
+  "ENCHANTED_OAK_WOOD" :
+  {
+    "OAK" : 160
+  },
+
+  "SPRUCE_WOOD" :
+  {
+    "SPRUCE" : 1
+  },
+  "ENCHANTED_SPRUCE_WOOD" :
+  {
+    "SPRUCE" : 160
+  },
+
+  "BIRCH_WOOD" :
+  {
+    "BIRCH" : 1
+  },
+  "ENCHANTED_BIRCH_WOOD" :
+  {
+    "BIRCH" : 160
+  },
+
+  "DARK_OAK_WOOD" :
+  {
+    "DARK_OAK" : 1
+  },
+  "ENCHANTED_DARK_OAK_WOOD" :
+  {
+    "DARK_OAK" : 160
+  },
+
+  "ACACIA_WOOD" :
+  {
+    "ACACIA" : 1
+  },
+  "ENCHANTED_ACACIA_WOOD" :
+  {
+    "ACACIA" : 160
+  },
+
+  "JUNGLE_WOOD" :
+  {
+    "JUNGLE" : 1
+  },
+  "ENCHANTED_JUNGLE_WOOD" :
+  {
+    "JUNGLE" : 160
+  }
+}

@@ -1,13 +1,10 @@
 package com.mattdion.skyblockbazaar.minions;
 
-import org.springframework.stereotype.Repository;
-
 import java.time.Duration;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
-@Repository
 public class MinionMap {
 
     /**
@@ -67,6 +64,10 @@ public class MinionMap {
      */
     public Map<MinionID, Minion> getMinions() {
         return new HashMap<>(minions);
+    }
+
+    public Minion getMinion(MinionID minionID) {
+        return minions.get(minionID);
     }
 
 
