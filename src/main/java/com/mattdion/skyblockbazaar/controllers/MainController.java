@@ -21,8 +21,14 @@ public class MainController {
         this.playerProductionService = playerProductionService;
     }
 
+    /**
+     * Fetches {@link Player} to the {@code /api/v1/main/{name}} endpoint using Mojang and Hypixel API.
+     * @param name {@link String} representing {@link Player} to be fetched
+     * @return {@link Player} of {@code name}
+     * @throws NoPlayerFoundException when no {@link Player} found in external APIs
+     */
     @GetMapping("/main/{name}")
-    public Object getReply(@PathVariable String name) throws NoPlayerFoundException {
+    public Player getReply(@PathVariable String name) throws NoPlayerFoundException {
         try {
             Player player = playerProductionService.addPlayer(name);
             playerProductionService.updateMinionMap(player);

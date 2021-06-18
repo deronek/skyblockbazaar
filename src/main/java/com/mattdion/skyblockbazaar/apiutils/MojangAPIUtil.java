@@ -3,6 +3,7 @@ package com.mattdion.skyblockbazaar.apiutils;
 import com.mattdion.skyblockbazaar.exceptions.NoPlayerFoundException;
 import com.mattdion.skyblockbazaar.player.Player;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -37,6 +38,8 @@ public class MojangAPIUtil {
             return player;
         } catch (IllegalStateException e) {
             throw new TimeoutException("Mojang API timeout");
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         } catch (WebClientResponseException e) {
             throw new ResponseStatusException(e.getStatusCode());
         }

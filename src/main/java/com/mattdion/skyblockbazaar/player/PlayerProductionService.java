@@ -5,9 +5,11 @@ import com.mattdion.skyblockbazaar.hypixelapi.BazaarReplyService;
 import com.mattdion.skyblockbazaar.hypixelapi.PlayerReplyService;
 import com.mattdion.skyblockbazaar.minions.Minion;
 import com.mattdion.skyblockbazaar.minions.MinionID;
+import com.mattdion.skyblockbazaar.minions.MinionMap;
 import com.mattdion.skyblockbazaar.products.Product;
 import com.mattdion.skyblockbazaar.products.ProductConstants;
 import com.mattdion.skyblockbazaar.products.ProductID;
+import com.mattdion.skyblockbazaar.products.ProductMap;
 import net.hypixel.api.reply.skyblock.BazaarReply;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +36,13 @@ public class PlayerProductionService {
         this.bazaarReplyService = bazaarReplyService;
     }
 
+    /**
+     * Adds {@link Player} of certain {@code name} to the {@link PlayerMap}.
+     * @param name {@link String} representing {@link Player} name
+     * @return {@link Player} added to the {@link PlayerMap}
+     * @throws NoPlayerFoundException when no {@link Player} is found in Mojang API database
+     * @throws TimeoutException       when request to Mojang API times out
+     */
     public Player addPlayer(String name) throws NoPlayerFoundException, TimeoutException {
         Player player = playerMap.getPlayer(name);
         if (player == null) return playerMap.addPlayer(name);
@@ -46,12 +55,23 @@ public class PlayerProductionService {
         return playerMap.addPlayer(name);
     }
 
+    /**
+     * Updates {@link MinionMap} of {@code player} using Hypixel API.
+     * @param player {@link Player} to be updated
+     * @throws NoPlayerFoundException when no {@link Player} is found in Hypixel API database
+     * @throws TimeoutException when request to Hypixel API times out
+     */
     public void updateMinionMap(Player player) throws NoPlayerFoundException, TimeoutException {
         Map<MinionID, Integer> minionLevels = playerReplyService.getMinionLevelsMap(player);
 
         player.updateMinionMap(minionLevels);
     }
 
+    /**
+     * Fills {@link ProductMap} of {@code player} using Hypixel API database.
+     * @param player {@link Player} to be updated
+     * @throws TimeoutException when request to Hypixel API times out
+     */
     public void getPlayerProducts(Player player) throws TimeoutException {
         BazaarReply bazaarReply = bazaarReplyService.getBazaarReply();
 
